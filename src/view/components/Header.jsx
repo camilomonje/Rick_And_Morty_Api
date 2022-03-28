@@ -21,7 +21,9 @@ const Header = () => {
 					<li>
 						<a href="/">Favoritos</a>
 					</li>
-					
+					<li>
+						<a href="/episodes">Episodios</a>
+					</li>
 				</ul>
 			</div>
 			<div className="navbar-right">
