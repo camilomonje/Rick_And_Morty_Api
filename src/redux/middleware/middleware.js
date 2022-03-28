@@ -8,9 +8,11 @@ const getCharactersFlow =
     next(action);
     if (action.type === "GET_CHARACTERS") {
       try {
-        const response = await api.loadCharacters();
+        var response = await api.loadCharacters();
         dispatch(getCharactersSuccess(response));
-      } catch (error) {}
+      } catch (error) {
+        console.log(error)
+      }
     }
   };
 

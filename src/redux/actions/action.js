@@ -11,3 +11,13 @@ export const selectCharacter = (item) => ({
   type: "SELECT_CHARACTER",
   payload: item,
 });
+
+export const addFavorite = (item) => ({
+  type: "ADD_TO_FAVORITES",
+  payload: item,
+});
+
+export const removeFavorite = (id) => ({
+  type: "REMOVE_TO_FAVORITES",
+  payload: id
+})
