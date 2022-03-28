@@ -21,7 +21,7 @@ const CardsContainer = () => {
 
   return <div className="ListContainer">
       {characters.map((item) => {
-          return <Card data={item}/>;
+          return <Card key={item.id} data={item}/>;
       })}
   </div>;
 };

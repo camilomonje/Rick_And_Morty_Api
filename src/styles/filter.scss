@@ -1,0 +1,36 @@
+.Filter {
+	width: 100px;
+	height: auto;
+	border: 1px solid #C7C7C7;
+	border-radius: 6px;
+	padding: 20px 20px 0 20px;
+	position: absolute;
+	top: 60px;
+	right: 50px;
+}
+.Filter ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.Filter ul li {
+	text-align: end;
+}
+.Filter ul li:nth-child(1),
+.Filter ul li:nth-child(2) {
+	font-weight: bold;
+}
+.Filter ul li:last-child {
+	padding-top: 20px;
+	border-top: 1px solid #C7C7C7;
+}
+.Filter ul li:last-child a {
+	color: #ACD9B2;
+	font-size: 14px;
+}
+.Filter ul li a {
+	color:black;
+	text-decoration: none;
+	margin-bottom: 20px;
+	display: inline-block;
+}

@@ -7,12 +7,12 @@ const DataCharacter = ({ data }) => {
     <div className="dataCharacter">
       <div className="dataTitle">
         <h1>Name: {data.name} </h1>
-        {true?
-        <AiOutlineStar style={{ fontSize: "50px", color: "gray"  }} />:
-        <AiFillStar style={{ fontSize: "50px", color: "red"  }} />
-
-        }
-        </div>
+        {true ? (
+          <AiOutlineStar style={{ fontSize: "50px", color: "gray" }} />
+        ) : (
+          <AiFillStar style={{ fontSize: "50px", color: "red" }} />
+        )}
+      </div>
       <h3>Status: {data.status}</h3>
       <h3>Species: {data.species}</h3>
       <h3>Gender: {data.gender}</h3>
