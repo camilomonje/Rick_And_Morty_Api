@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import DataCharacter from "../components/DataCharacter";
 import EpisodeCharacter from "../components/EpisodeCharacter";
@@ -6,7 +6,6 @@ import ImageCharacter from "../components/ImageCharacter";
 import "../styles/characterContainer.scss"
 
 const CharacterContainer = ({character}) => {
-  const [characters, setCharacters] = useState();
 
  
   return (
