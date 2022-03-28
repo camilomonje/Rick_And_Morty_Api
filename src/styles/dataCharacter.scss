@@ -1,0 +1,15 @@
+.dataCharacter {
+    display: flex;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.dataTitle {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding-right: 2rem;
+}

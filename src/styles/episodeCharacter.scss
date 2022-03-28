@@ -1,0 +1,19 @@
+.episodeCharacter {
+  display: block;
+  margin-left: 2rem;
+  height: 25rem;
+  border-radius: 20px;
+  grid-column: span 2;
+  border-width: 2px;
+  border-color: black;
+  border: 2px;
+}
+.episodeCharacter ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10rem, 1fr));
+  list-style-type: disclosure-closed;
+}
+
+.episodeCharacter a {
+  font-size: 20px;
+}

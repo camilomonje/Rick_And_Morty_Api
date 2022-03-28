@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import DataCharacter from "../components/DataCharacter";
 import EpisodeCharacter from "../components/EpisodeCharacter";
 import ImageCharacter from "../components/ImageCharacter";
+import "../styles/characterContainer.scss"
 
 const CharacterContainer = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState();
 
   useEffect(() => {
     axios
@@ -18,13 +19,17 @@ const CharacterContainer = () => {
         console.log(error);
       });
   });
-
   return (
-    <div>
-      <ImageCharacter urlImage={characters.image} />
+    <div className="characterContainer">
+      {characters !== undefined &&
+      <Fragment>
+      <ImageCharacter urlImage={characters.image}  />
       <DataCharacter data = {characters} />
-      {/* <EpisodeCharacter data={characters} /> */}
-    </div>
+      <EpisodeCharacter data={characters} />
+      </Fragment>}
+    
+    </div>  
+  
   );
 };
 
