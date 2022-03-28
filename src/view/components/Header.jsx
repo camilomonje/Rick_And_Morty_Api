@@ -20,19 +20,19 @@ const Header = () => {
 						<Link to="/">Todos</Link>
 					</li>
 					<li>
-						<a href="/">Favoritos</a>
+						<Link to="/favorites">Favoritos</Link>
 					</li>
 					<li>
-						<a href="/episodes">Episodios</a>
+						<Link to="/episodes">Episodios</Link>
 					</li>
 				</ul>
 			</div>
 			<div className="navbar-right">
-				<ul>
+				{/* <ul>
 					<li className="navbar-email" onClick={handleToggle}>
 						Especies
 					</li>
-				</ul>
+				</ul> */}
 			</div>
 			{toggle && <Filter />}
 		</nav>

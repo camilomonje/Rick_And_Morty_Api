@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./view/components/Header";
 import Character from "./view/pages/Character";
 import Episodes from "./view/pages/Episodes";
+import Favorites from "./view/pages/Favorites";
 import Home from "./view/pages/Home";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Header />
       <Routes>
         <Route  path="/" element={<Home />}  />
+        <Route  path="/favorites" element={<Favorites />}  />
         <Route  path="/character" element={<Character />}  />
         <Route  path="/episodes" element={<Episodes />}  />
       </Routes>

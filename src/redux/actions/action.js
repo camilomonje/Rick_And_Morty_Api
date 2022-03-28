@@ -21,3 +21,8 @@ export const removeFavorite = (id) => ({
   type: "REMOVE_TO_FAVORITES",
   payload: id
 })
+
+export const getFavorites = (list) => ({
+  type: "GET_FAVORITES",
+  payload: list
+})

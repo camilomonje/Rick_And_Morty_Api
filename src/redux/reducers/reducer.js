@@ -30,6 +30,11 @@ const reducer = (state = initialState, action) => {
         ),
       };
 
+    // case "GET_FAVORITES":
+    //   return {
+    //     ...state, 
+    //   }
+
     default:
       return state;
   }
