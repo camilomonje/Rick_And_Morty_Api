@@ -1,29 +1,35 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { bindActionCreators } from "redux";
 import Card from "../components/Card";
 import "../styles/cardsContainers.scss"
+import { getCharacters } from "../../redux/actions/action";
+import { connect } from "react-redux";
 
-const CardsContainer = () => {
-  
-    const [characters, setCharacters] = useState([]);
-  
-    useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character")
-      .then((data) => {
-        setCharacters(data.data.results);
-        // setInfo(data.data.info);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+const CardsContainer = ({getCharacters, charactersList}) => {
+
+  useEffect(() => {
+      getCharacters();
   });
 
   return <div className="ListContainer">
-      {characters.map((item) => {
+      {charactersList.map((item) => {
           return <Card key={item.id} data={item}/>;
       })}
   </div>;
 };
 
-export default CardsContainer;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    getCharacters,
+  },
+  dispatch
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    charactersList: state.charactersData.results
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(CardsContainer);
