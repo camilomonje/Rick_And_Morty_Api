@@ -6,7 +6,7 @@ import Home from "./view/pages/Home";
 
 function App() {
   return (
-    <BrowserRouter basename={"/Rick_And_Morty_Api/"}>
+    <BrowserRouter  basename="/Rick_And_Morty_Api/">
     <Header />
       <Routes>
         <Route  path="/" element={<Home />}  />
