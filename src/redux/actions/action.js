@@ -22,7 +22,11 @@ export const removeFavorite = (id) => ({
   payload: id
 })
 
-export const getFavorites = (list) => ({
-  type: "GET_FAVORITES",
-  payload: list
-})
+export const getEpisodes = () => ({
+  type: "GET_EPISODES",
+});
+
+export const getEpisodesSuccess = (response) => ({
+  type: "GET_EPISODES_SUCCESS",
+  payload: response,
+});

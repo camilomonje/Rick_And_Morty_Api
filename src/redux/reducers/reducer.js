@@ -3,6 +3,10 @@ const initialState = {
     info: {},
     results: [],
   },
+  episodesData: {
+    info: {},
+    results: [],
+  },
   selectedCharacter: {},
   myFavorites: [],
   loading: false,
@@ -30,10 +34,11 @@ const reducer = (state = initialState, action) => {
         ),
       };
 
-    // case "GET_FAVORITES":
-    //   return {
-    //     ...state, 
-    //   }
+      case "GET_EPISODES":
+        return { ...state, loading: true }
+
+        case "GET_EPISODES_SUCCESS":
+      return { ...state, episodesData: action.payload, loading: false };
 
     default:
       return state;

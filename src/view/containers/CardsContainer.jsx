@@ -9,6 +9,7 @@ const CardsContainer = ({getCharacters, charactersList}) => {
 
   useEffect(() => {
       getCharacters();
+      console.log(charactersList)
   },[]);
 
   return <div className="ListContainer">

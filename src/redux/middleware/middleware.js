@@ -1,4 +1,4 @@
-import { getCharactersSuccess } from "../actions/action";
+import { getCharactersSuccess, getEpisodesSuccess } from "../actions/action";
 
 const getCharactersFlow =
   ({ api }) =>
@@ -10,6 +10,14 @@ const getCharactersFlow =
       try {
         var response = await api.loadCharacters();
         dispatch(getCharactersSuccess(response));
+      } catch (error) {
+        console.log(error)
+      }
+    }else
+    if (action.type === "GET_EPISODES") {
+      try {
+        var respons = await api.loadEpisodes();
+        dispatch(getEpisodesSuccess(respons));
       } catch (error) {
         console.log(error)
       }
