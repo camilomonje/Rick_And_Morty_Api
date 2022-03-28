@@ -5,7 +5,6 @@ import Filter from './Filter';
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
-	const [toggleOrders, setToggleOrders] = useState(false);
 
 	const handleToggle = () => {
 		setToggle(!toggle);
@@ -30,17 +29,9 @@ const Header = () => {
 					<li className="navbar-email" onClick={handleToggle}>
 						Especies
 					</li>
-					{/* <li
-						className="navbar-shopping-cart"
-						onClick={() => setToggleOrders(!toggleOrders)}
-					>
-						<img src={shoppingCart} alt="shopping cart" />
-						{state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
-					</li> */}
 				</ul>
 			</div>
 			{toggle && <Filter />}
-			{/* {toggleOrders && <MyOrder />} */}
 		</nav>
 	);
 }
