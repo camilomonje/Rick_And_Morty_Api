@@ -1,36 +1,37 @@
-import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
+import { connect } from "react-redux";
 import DataCharacter from "../components/DataCharacter";
 import EpisodeCharacter from "../components/EpisodeCharacter";
 import ImageCharacter from "../components/ImageCharacter";
 import "../styles/characterContainer.scss"
 
-const CharacterContainer = () => {
+const CharacterContainer = ({character}) => {
   const [characters, setCharacters] = useState();
 
-  useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character/1")
-      .then((data) => {
-        setCharacters(data.data);
-        // setInfo(data.data.info);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+ 
   return (
     <div className="characterContainer">
-      {characters !== undefined &&
+      {(character.id !== undefined) ?
       <Fragment>
-      <ImageCharacter urlImage={characters.image}  />
-      <DataCharacter data = {characters} />
-      <EpisodeCharacter data={characters} />
-      </Fragment>}
+      <ImageCharacter urlImage={character.image}  />
+      <DataCharacter data = {character} />
+      <EpisodeCharacter data={character} />
+      </Fragment>:
+      <div>
+        <h1>No ha seleccionado ningún personaje</h1>
+        <h2>Selecciona uno <a href="/">aqui:</a></h2>
+      </div>
+      }
     
     </div>  
   
   );
 };
 
-export default CharacterContainer;
+const mapStateToProps = (state) => {
+  return {
+    character: state.selectedCharacter
+  }
+}
+
+export default connect(mapStateToProps)(CharacterContainer);

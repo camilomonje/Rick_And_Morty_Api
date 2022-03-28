@@ -3,7 +3,7 @@ const initialState = {
         info: {},
         results: []
     },
-    selectedCharacter: false,
+    selectedCharacter: {},
     loading: false
   };
   
@@ -14,6 +14,9 @@ const initialState = {
   
       case "GET_CHARACTERS_SUCCESS":
         return { ...state, charactersData: action.payload, loading: false };
+
+        case "SELECT_CHARACTER":
+          return {...state, selectedCharacter: action.payload}
   
       default:
         return state;
